@@ -494,7 +494,7 @@ export class KernelConnection implements Kernel.IKernelConnection {
    * existing connection.
    */
   reconnect(): Promise<void> {
-    this._errorIfDisposed();
+    // this._errorIfDisposed();
     const result = new PromiseDelegate<void>();
 
     // Set up a listener for the connection status changing, which accepts or
@@ -1231,7 +1231,7 @@ export class KernelConnection implements Kernel.IKernelConnection {
    * Create the kernel websocket connection and add socket status handlers.
    */
   private _createSocket = () => {
-    this._errorIfDisposed();
+    // this._errorIfDisposed();
 
     // Make sure the socket is clear
     this._clearSocket();
@@ -1483,7 +1483,7 @@ export class KernelConnection implements Kernel.IKernelConnection {
    * Attempt a connection if we have not exhausted connection attempts.
    */
   private _reconnect() {
-    this._errorIfDisposed();
+    // this._errorIfDisposed();
 
     // Clear any existing reconnection attempt
     clearTimeout(this._reconnectTimeout);
